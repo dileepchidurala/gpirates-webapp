@@ -10,7 +10,8 @@ from django.db import models
 class Movie(models.Model):
     name = models.CharField(max_length=100)
     description = models.TextField(max_length=1000)
-    image = models.ImageField(upload_to = 'pic_folder/')
+    # image = models.ImageField(upload_to = 'pic_folder/')
+    image = models.CharField(max_length=1000)
     link = models.CharField(max_length=1000)
     count = models.IntegerField(default=0)
 
