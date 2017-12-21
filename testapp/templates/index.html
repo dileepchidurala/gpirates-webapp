@@ -1,0 +1,120 @@
+{% load static %}
+<html>
+<head>
+	<title>G-Pirates</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+	<script src= "{% static 'testapp/js/jquery-3.2.1.js' %}"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href = "{% static 'testapp/css/mycss.css' %}">
+  <script src="https://ajax.microsoft.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js"></script>
+  
+	<style>
+		@font-face {
+		    font-family: 'Hacked';
+		    src: url(https://hackedfont.com/HACKED.ttf);
+		}	
+	</style>
+</head>
+<body>
+
+<div id = "nav">
+</div>
+
+<script>
+    var surl = "/static/testapp/";
+	$.get(surl + "/templates/nav.html", function(data){
+	    $("#nav").replaceWith(data);
+	});
+
+
+</script>
+
+<section class="jumbotron text-center" style="padding-bottom: 10px;">
+<div class="container">
+  <h1 class="jumbotron-heading" style=" font-family : 'Hacked'; font-size: 100px;">G-PIRATES</h1>
+  <p class="lead text-bold" style=" font-family : 'Hacked';">You Request... We Upload</p>
+  <p>
+    <a class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" id = "requestModal">Request</a>
+  </p>
+</div>
+</section>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content" >
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Request A Download</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div id ="modalcontent">
+        <div class="modal-body" id = "modalBody">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name"  placeholder="Enter your name">
+            <small id="emailHelp" class="form-text text-muted">We'll never share your name with anyone else.</small>
+          </div>
+          <div class="form-group">
+            <label for="download">Download Request</label>
+            <input type="text" class="form-control" id="download" placeholder="Enter the name of the Download">
+          </div>
+        </div>
+        <div class="modal-footer" id = "modalFooter">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary " style="background-color : green" id = "requestButton">Request</button>
+        </div>
+        
+      </div>
+      <div id= "success">
+          
+      </div>
+    </div>
+  </div>
+</div>
+
+
+ <div class="container marketing" style="margin-top : 50px; bottom : 100px;">
+<center>
+        <!-- Three columns of text below the carousel -->
+        <div class="row">
+          <div class="col-lg-4">
+          	<a href="movies" >
+            <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="100" height="100">
+            <h2>movies</h2>
+        </a>
+          </div><!-- /.col-lg-4 -->
+          <div class="col-lg-4">
+          	          	<a href="series" >
+
+            <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="100" height="100">
+            <h2>series</h2>
+</a>
+
+          </div><!-- /.col-lg-4 -->
+          <div class="col-lg-4">
+          	 <a href="#" >
+                    
+            <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="100" height="100">
+            <h2>applications</h2>
+                    </a>
+
+          </div><!-- /.col-lg-4 -->
+           
+        </div><!-- /.row -->
+</center>
+</div>
+
+<div id="footer" ><center>
+	<span style="font-family: Hacked"> Font credits: David Libeau <br> About us: <br> </span>
+   <span style="font-family: Hacked; font-size: 20px;"> 
+   	Ideation : Edward_1412 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   	Designer : TheTopper &nbsp;&nbsp;
+   	and  &nbsp;&nbsp;Thuppal
+    </span>
+</center>
+</div>
+<script src="{% static 'testapp/js/myjs.js' %}"></script>
+</body>
+</html>

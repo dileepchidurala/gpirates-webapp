@@ -1,0 +1,58 @@
+{% load static %}
+<html>
+<head>
+  <title>G-Pirates</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+	<script src= "{% static 'testapp/js/jquery-3.2.1.js' %}"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+  	<link rel="stylesheet" href = "{% static 'testapp/css/mycss.css' %}">
+      <script src="https://ajax.microsoft.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js"></script>
+      
+  <style>
+    @font-face {
+        font-family: 'Hacked';
+        src: url(https://hackedfont.com/HACKED.ttf);
+    } 
+  </style>
+</head>
+<body>
+
+<div id = "nav">
+</div>
+
+<script>
+      var surl = "/static/testapp/";
+	$.get(surl + "/templates/nav.html", function(data){
+	    $("#nav").replaceWith(data);
+	});
+</script>
+<center><h1 style="font-family: Hacked; font-size: 70px; top: 20px" >Movies</h1></center>
+<div class= "container" style="margin-top: 30px">
+<center>
+  <div class = "row" id = "items"></div>
+</center>
+</div>
+
+<script>
+
+$.ajax({
+        url: 'http://localhost:5000/app/movies_list/',
+        dataType: "json",
+        type: "GET",
+        crossDomain: true,
+        success: function(result) {
+            $.get(surl + "/templates/item.html", function(template) {
+                $.template("mytemplate", template);
+                $.tmpl("mytemplate", result).appendTo("#items");
+            });
+        },
+        error: function(resp, ajaxoption, thrownerror) {
+            console.log("error");
+        }
+    });
+</script>
+
+
+</body>
+</html>
