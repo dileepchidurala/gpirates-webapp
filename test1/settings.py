@@ -10,6 +10,8 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.11/ref/settings/
 
 set HTTP_PROXY=http://hydwsa1.gitam.edu:3128
+
+https://drive.google.com/file/d/1hJKHEC26Mz1hN8JbTe6aZYAVs8ux1lLH/view?usp=sharing
 """
 
 import os
