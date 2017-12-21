@@ -4,7 +4,7 @@ $("#requestButton").on("click", function(){
   var description = $("#download").val();
   console.log(name + " " + description);
   $.ajax({
-    url: 'http://localhost:5000/app/addrequest/',
+    url: base + '/app/addrequest/',
     dataType: "json",
     type: "POST",
     data: {
@@ -29,3 +29,4 @@ $("#requestModal").on("click", function(){
   $("#modalcontent").show();
   $("#success").hide();
 });
+
