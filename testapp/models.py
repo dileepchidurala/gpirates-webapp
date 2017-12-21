@@ -20,15 +20,15 @@ class Movie(models.Model):
 
 class SeriesImage(models.Model):
     series_name = models.CharField(max_length=128)
-    image = models.ImageField()
+    image = models.CharField(max_length=1000)
 
 
 class Series(models.Model):
     name = models.CharField(max_length=100)
     description = models.TextField(max_length=1000)
-    count = models.IntegerField(default=0)
+    image = models.CharField(max_length=1000)
     link = models.CharField(max_length=1000)
-    image = models.ForeignKey(SeriesImage)
+    count = models.IntegerField(default=0)
 
     def __str__(self):
         return self.name

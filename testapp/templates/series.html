@@ -24,6 +24,7 @@
 <script>
       var surl = "/static/testapp/";
       var base  = "https://gpirates.herokuapp.com"
+      var base1  = "http://localhost:5000"
 
 	$.get(surl + "/templates/nav.html", function(data){
 	    $("#nav").replaceWith(data);
@@ -39,11 +40,12 @@
 <script>
 
 $.ajax({
-        url: base + '/app/series_list/',
+        url: base1 + '/app/series_list/',
         dataType: "json",
         type: "GET",
         crossDomain: true,
         success: function(result) {
+            console.log(result);
             $.get(surl + "/templates/item.html", function(template) {
                 $.template("mytemplate", template);
                 $.tmpl("mytemplate", result).appendTo("#items");
