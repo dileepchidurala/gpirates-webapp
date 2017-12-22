@@ -38,12 +38,13 @@
 
 <script>
 
-$.ajax({
+    $.ajax({
         url: base + '/app/movies_list/',
         dataType: "json",
         type: "GET",
         crossDomain: true,
         success: function(result) {
+            result = result.reverse();
             $.get(surl + "/templates/item.html", function(template) {
                 $.template("mytemplate", template);
                 $.tmpl("mytemplate", result).appendTo("#items");
