@@ -30,13 +30,13 @@
 
 
 </script>
-
+<div id = "content">
 <section class="jumbotron text-center" style="padding-bottom: 10px; padding-top: 10px;">
 <div class="container">
   <h1 class="jumbotron-heading" style=" font-family : 'Hacked'; font-size: 70px;">G-PIRATES</h1>
   <p class="lead text-bold" style=" font-family : 'Hacked';">You Request... We Upload</p>
   <p>
-    <a class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" id = "requestModal">Request</a>
+    <a class="btn btn-success btn-lg" data-toggle="modal" data-target="#exampleModal" id = "requestModal" style="font-weight: bold; font-size: 25px;">Request</a>
   </p>
 </div>
 </section>
@@ -46,7 +46,7 @@
     <div class="modal-content" >
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Request A Download</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <button type="button"  class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
@@ -109,9 +109,9 @@
 <div style="color: red; font-size: 20px;"><span ><center>* For fast and better download use 3rd party download managers (especially hostlers)<br>
   download the download manager <a href="http://www.eagleget.com/download/setup.exe">here</a></span></div>
 
+</div>
 
-
-<div id="footer" ><center>
+<div id="footer" class = "footer" ><center>
 	<span style="font-family: Hacked"> Font credits: David Libeau <br> About us: <br> </span>
    <span style="font-family: Hacked; font-size: 20px;"> 
    	Ideation : Edward_1412 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -120,6 +120,7 @@
     </span>
 </center>
 </div>
+
 <script src="{% static 'testapp/js/myjs.js' %}"></script>
 </body>
 </html>

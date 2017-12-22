@@ -2,6 +2,8 @@ $("#requestButton").on("click", function(){
 
   var  name = $("#name").val();
   var description = $("#download").val();
+  $("#download").val("");
+  $("#name").val("");
   console.log(name + " " + description);
   $.ajax({
     url: base + '/app/addrequest/',
