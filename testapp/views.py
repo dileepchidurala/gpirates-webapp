@@ -32,3 +32,10 @@ def series(request):
     return render(request, 'series.html')
 
 
+class Displayseries(generics.UpdateAPIView):
+    queryset = Series.objects.all()
+    serializer_class = SeriesSerializer
+
+class DisplayMovies(generics.UpdateAPIView):
+    queryset = Movie.objects.all()
+    serializer_class = MovieSerializer
