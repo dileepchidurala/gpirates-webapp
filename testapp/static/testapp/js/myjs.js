@@ -46,10 +46,10 @@ $("#reportButton").on("click", function(){
       },
       crossDomain: true,
       success: function(result) {
-        $("#modalcontent").hide();
-        $("#success").show();
-        $("#success").html('<svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52"><circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/><path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/></svg>');
-        $("#success").append("<center>Your Problem has been reported. It will be handled.<br>Keep checking for new uploads :)</center><br><br>");
+        $("#modalcontent1").hide();
+        $("#success1").show();
+        $("#success1").html('<svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52"><circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/><path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/></svg>');
+        $("#success1").append("<center>Your Problem has been reported. It will be handled.<br>Keep checking for new uploads :)</center><br><br>");
         // $("#modalFooter").css("textAlign", "center");
       },
       error: function(resp, ajaxoption, thrownerror) {
@@ -59,8 +59,8 @@ $("#reportButton").on("click", function(){
   })
   
   $("#reportModal").on("click", function(){
-    $("#modalcontent").show();
-    $("#success").hide();
+    $("#modalcontent1").show();
+    $("#success1").hide();
   });
   
   
