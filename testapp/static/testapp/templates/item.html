@@ -1,13 +1,28 @@
 
   <div class="col-lg-3 col-sm-6">
     <center>
-  <div class="card" style="width: 15rem; margin: 10px;">
+  <div class="card" style="width: 15rem; margin: 10px;" id = "card${id}">
   <img class="card-img-top" src="${image}" alt="Card image cap" width="100dp" height="250dp">
   <div class="card-body">
     <h4 class="card-title">${name}</h4>
-    <p class="card-text">${description}</p>
+    <p class="card-text" id="desc${id}"></p>
+    <div id = "extracontent${id}"></div>
     <a href="${link}" target="_blank" class="btn btn-primary">Download!</a>
   </div>
 </div>
 </center>
 </div>
+
+<script>
+
+    str = "${description}";
+    str = str.split("...");
+    
+    $("#desc${id}").html(str[0]);
+    if (str.length == 2){
+      str[1] = str[1].replace(/&lt;/g,"<");
+      str[1] = str[1].replace(/&gt;/g,">");
+      str[1] = str[1].replace(/&#34;/g,'"');
+      $("#extracontent${id}").html(str[1]);
+    }
+</script>
