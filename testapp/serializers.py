@@ -14,6 +14,12 @@ class SeriesSerializer(serializers.ModelSerializer):
         fields = ("id", "name" , "description" ,"count",'image', "link" )
 
 
+
+class ApplicationsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Applications
+        fields = ("id", "name" , "description" ,"count",'image', "link" )
+
 class requestSerializer(serializers.ModelSerializer):
     class Meta:
         model = RequestMe

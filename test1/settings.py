@@ -11,7 +11,8 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 
 set HTTP_PROXY=http://hydwsa1.gitam.edu:3128
 
-heroku local web -f Procfile.windows"""
+heroku local web -f Procfile.windows
+https://codepen.io/josephrexme/pen/oGWwOb"""
 
 import os
 

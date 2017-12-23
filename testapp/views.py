@@ -20,6 +20,10 @@ class Displayseries(generics.ListCreateAPIView):
     queryset = Series.objects.all()
     serializer_class = SeriesSerializer
 
+class Displayapplications(generics.ListCreateAPIView):
+    queryset = Applications.objects.all()
+    serializer_class = ApplicationsSerializer
+
 def index(request):
     return render(request, 'index.html')
 
@@ -31,11 +35,12 @@ def movies(request):
 def series(request):
     return render(request, 'series.html')
 
+def applications(request):
+    return render(request, 'applications.html')
 
-# class Displayseries(generics.UpdateAPIView):
-#     queryset = Series.objects.all()
-#     serializer_class = SeriesSerializer
 #
-# class DisplayMovies(generics.UpdateAPIView):
-#     queryset = Movie.objects.all()
-#     serializer_class = MovieSerializer
+# def ModifySeries(request):
+#
+#
+# def ModifyMovie(request):
+#

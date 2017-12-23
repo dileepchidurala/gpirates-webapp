@@ -42,3 +42,13 @@ class RequestMe(models.Model):
 
     def __str__(self):
         return self.requestDetail
+
+class Applications(models.Model):
+    name = models.CharField(max_length=100)
+    description = models.TextField(max_length=1000)
+    image = models.CharField(max_length=1000)
+    link = models.CharField(max_length=1000)
+    count = models.IntegerField(default=0)
+
+    def __str__(self):
+        return self.name
