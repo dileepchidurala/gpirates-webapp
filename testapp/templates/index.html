@@ -38,6 +38,8 @@
   <p>
     <a class="btn btn-success btn-lg" data-toggle="modal" data-target="#exampleModal" id = "requestModal" style="font-weight: bold; font-size: 25px;">Request</a>
     <a class="btn btn-danger btn-lg" data-toggle="modal" data-target="#exampleModal1" id = "reportModal" style="font-weight: bold; font-size: 25px;">Report A Problem</a>
+    <a class="btn btn-warning btn-lg" data-toggle="modal" data-target="#exampleModal2" id = "suggestionModal" style="font-weight: bold; font-size: 25px;">Suggestions and Feedback</a>
+    
   </p>
 </div>
 </section>
@@ -92,7 +94,7 @@
           <div class="modal-body" id = "modalBody">
             <div class="form-group">
               <label for="problem">Express Your Problem</label>
-              <input type="text" class="form-control" id="problem" placeholder="Please write your problems here">
+              <input type="text-area" class="form-control" id="problem" placeholder="Please write your problems here">
             </div>
             <div>
               We are serious about your problems and will solve it.
@@ -102,7 +104,6 @@
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             <button type="button" class="btn btn-primary " style="background-color : red" id = "reportButton">Report</button>
           </div>
-          
         </div>
         <div id= "success1">
         </div>
@@ -110,6 +111,41 @@
     </div>
     </div>
   </div>
+  
+
+  <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class = "container-fluid" >
+        <div class="modal-content col-sm-12" >
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Suggestions and Feedback</h5>
+            <button type="button"  class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div id ="modalcontent2">
+            <div class="modal-body" id = "modalBody">
+              <div class="form-group">
+                <label for="suggestion">Suggestions and Feedback</label>
+                <textarea class="form-control" id="suggestion" placeholder="Please write your Suggestions and feedback here" rows="4"></textarea>
+              </div>
+              <div><center>
+                We dont show ads and its free.<br> Your suggestions are valuable and will keep us going.
+                </center>
+              </div>
+            </div>
+            <div class="modal-footer" id = "modalFooter">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary " style="background-color : rgb(238, 188, 22)" id = "suggestionButton">Submit</button>
+            </div>
+          </div>
+          <div id= "success2">
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+    
   
 
  <div class="container marketing" style="margin-top : 50px; bottom : 100px;">
