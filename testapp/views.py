@@ -10,18 +10,18 @@ from django.shortcuts import render
 
 # Create your views here.
 class DisplayMovies(generics.ListCreateAPIView):
-    queryset = Movie.objects.all()
+    queryset = Movie.objects.all().order_by("id")
     serializer_class = MovieSerializer
 
 class AddRequest(generics.CreateAPIView):
     serializer_class = requestSerializer
 
 class Displayseries(generics.ListCreateAPIView):
-    queryset = Series.objects.all()
+    queryset = Series.objects.all().order_by("id")
     serializer_class = SeriesSerializer
 
 class Displayapplications(generics.ListCreateAPIView):
-    queryset = Applications.objects.all()
+    queryset = Applications.objects.all().order_by("id")
     serializer_class = ApplicationsSerializer
 
 def index(request):
