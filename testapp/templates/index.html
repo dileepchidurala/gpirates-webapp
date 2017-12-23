@@ -37,12 +37,14 @@
   <p class="lead text-bold" style=" font-family : 'Hacked';">You Request... We Upload</p>
   <p>
     <a class="btn btn-success btn-lg" data-toggle="modal" data-target="#exampleModal" id = "requestModal" style="font-weight: bold; font-size: 25px;">Request</a>
+    <a class="btn btn-danger btn-lg" data-toggle="modal" data-target="#exampleModal1" id = "reportModal" style="font-weight: bold; font-size: 25px;">Report A Problem</a>
   </p>
 </div>
 </section>
 
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
+    <div class = "container-fluid" >
     <div class="modal-content col-sm-12" >
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Request A Download</h5>
@@ -72,8 +74,43 @@
       </div>
     </div>
   </div>
+  </div>
 </div>
 
+
+<div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class = "container-fluid" >
+      <div class="modal-content col-sm-12" >
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Report A Problem</h5>
+          <button type="button"  class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div id ="modalcontent">
+          <div class="modal-body" id = "modalBody">
+            <div class="form-group">
+              <label for="download">Express Your Problem</label>
+              <input type="text" class="form-control" id="download" placeholder="Please write your problems here">
+            </div>
+            <div>
+              We are serious about your problems and will solve it.
+            </div>
+          </div>
+          <div class="modal-footer" id = "modalFooter">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary " style="background-color : red" id = "reportButton">Report</button>
+          </div>
+          
+        </div>
+        <div id= "success">
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+  
 
  <div class="container marketing" style="margin-top : 50px; bottom : 100px;">
 <center>
@@ -112,7 +149,7 @@
 </div>
 
 <div id="footer" class = "footer" ><center>
-	<span style="font-family: Hacked"> Font credits: David Libeau <br> About us: <br> </span>
+	<span style="font-family: Hacked"> Font credits: David Libeau <br> About us: &nbsp;&nbsp;&nbsp;&nbsp;</span>
    <span style="font-family: Hacked; font-size: 20px;"> 
    	Ideation : Edward_1412 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
    	Designer : TheTopper &nbsp;&nbsp;
