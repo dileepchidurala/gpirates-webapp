@@ -6,6 +6,7 @@ from rest_framework import generics
 from testapp.serializers import *
 from django.http import HttpResponse
 from django.shortcuts import render,loader
+import smtplib
 
 
 # Create your views here.
@@ -15,6 +16,34 @@ class DisplayMovies(generics.ListCreateAPIView):
 
 class AddRequest(generics.CreateAPIView):
     serializer_class = requestSerializer
+
+    def post(self, request, *args, **kwargs):
+        username = "2210314961@gitam.in"
+        password = "reset123!@#"
+        receiver = '2210314912@gitam.in'
+        sender = ['2210314961@gitam.in']
+
+        name= request.data["name"]
+        detail = request.data["requestDetail"]
+
+        message = '''From : <2210314961@gitam.in>
+To : <alexandras9@my.smccd.edu>
+Subject : G-Pirates
+
+Name: ''' + name +" \n Request: " + detail
+
+        try:
+            smtpObj = smtplib.SMTP('smtp.gmail.com:587')
+            smtpObj.starttls()
+            smtpObj.login(username, password)
+            smtpObj.sendmail(sender, receiver, message)
+            print 'Successfully sent E-mail'
+            smtpObj.close()
+        except smtplib.SMTPException as e:
+            print e
+
+        return super(AddRequest, self).post(request, *args, **kwargs)
+
 
 class Displayseries(generics.ListCreateAPIView):
     queryset = Series.objects.all().order_by("id")
