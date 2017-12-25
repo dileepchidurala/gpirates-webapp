@@ -14,4 +14,9 @@ urlpatterns = [
     url(r"^addrequest/$", views.AddRequest.as_view(), name='test_series'),
     url(r"^movies/(?P<idx>[0-9]+)/modify/$", views.ModifyMovie, name="list_item"),
     url(r"^series/(?P<idx>[0-9]+)/modify/$", views.ModifySeries, name="list_item"),
+    url(r"^applications/(?P<idx>[0-9]+)/modify/$", views.ModifyApplication, name="list_item"),
+    url(r"^movies/count/$", views.MoviesCount, name="list_item"),
+    url(r"^series/count/$", views.SeriesCount, name="list_item"),
+    url(r"^applications/count/$", views.ApplicationsCount, name="list_item"),
+
 ]

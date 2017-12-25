@@ -5,7 +5,7 @@ from django.shortcuts import render
 from rest_framework import generics
 from testapp.serializers import *
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render,loader
 
 
 # Create your views here.
@@ -50,4 +50,30 @@ def ModifyMovie(request, idx):
     x.count = x.count+1
     x.save()
     return HttpResponse(status=204)
+
+def ModifyApplication(request, idx):
+    x= Applications.objects.get(id = idx)
+    x.count = x.count+1
+    x.save()
+    return HttpResponse(status=204)
+
+def MoviesCount(request):
+    c = Movie.objects.values("name","count")
+    template = loader.get_template("testapp/count.html")
+    result = template.render(context={"jails": c})
+    return HttpResponse(result)
+
+
+def SeriesCount(request):
+    c = Series.objects.values("name","count")
+    template = loader.get_template("testapp/count.html")
+    result = template.render(context={"jails": c})
+    return HttpResponse(result)
+
+
+def ApplicationsCount(request):
+    c = Applications.objects.values("name","count")
+    template = loader.get_template("testapp/count.html")
+    result = template.render(context={"jails": c})
+    return HttpResponse(result)
 
