@@ -12,8 +12,6 @@ urlpatterns = [
     url(r"^series_list/$", views.Displayseries.as_view(), name='test_series'),
     url(r"^applications_list/$", views.Displayapplications.as_view(), name='test_applications'),
     url(r"^addrequest/$", views.AddRequest.as_view(), name='test_series'),
-
-    # url(r"^movies/(?P<pk>[0-9]+)/modify/$", views.ModifyMovie, name="list_item"),
-    # url(r"^series/(?P<pk>[0-9]+)/modify/$", views.ModifySeries, name="list_item"),
-
+    url(r"^movies/(?P<idx>[0-9]+)/modify/$", views.ModifyMovie, name="list_item"),
+    url(r"^series/(?P<idx>[0-9]+)/modify/$", views.ModifySeries, name="list_item"),
 ]

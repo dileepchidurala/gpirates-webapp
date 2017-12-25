@@ -38,9 +38,16 @@ def series(request):
 def applications(request):
     return render(request, 'applications.html')
 
-#
-# def ModifySeries(request):
-#
-#
-# def ModifyMovie(request):
-#
+
+def ModifySeries(request,idx):
+    x= Series.objects.get(id = idx)
+    x.count = x.count+1
+    x.save()
+    return HttpResponse(status=204)
+
+def ModifyMovie(request, idx):
+    x= Movie.objects.get(id = idx)
+    x.count = x.count+1
+    x.save()
+    return HttpResponse(status=204)
+

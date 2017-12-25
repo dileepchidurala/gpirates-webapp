@@ -1,27 +1,44 @@
-
-  <div class="col col-xs-5 col-sm-5 col-md-4 col-lg-3"  id = "card${id}">
-    <center>
-  <div class="card" >
-  <img class="card-img-top img-fluid" style="max-width: 100%; height: 250px;" src="${image}" alt="Card image cap">
-  <div class="card-body">
-    <h4 class="card-title" >${name}</h4>
-    <p class="card-text" id="desc${id}"></p>
-    <div id = "extracontent${id}"></div>
-    <a href="${link}" target="_blank" class="btn btn-primary">Download!</a>
-  </div>
-</div>
-</center>
+<div class="col col-xs-5 col-sm-5 col-md-4 col-lg-3" id="card${id}">
+  <center>
+    <div class="card">
+      <img class="card-img-top img-fluid" style="max-width: 100%; height: 250px;" src="${image}" alt="Card image cap">
+      <div class="card-body">
+        <h4 class="card-title">${name}</h4>
+        <p class="card-text" id="desc${id}"></p>
+        <div id="extracontent${id}"></div>
+        <a href="${link}" target="_blank" class="btn btn-primary" id="download${id}">Download!</a>
+      </div>
+    </div>
+  </center>
 </div>
 
 <script>
 
-    str = "${description}";  
-    str = str.split("...");
-    $("#desc${id}").html(str[0]);
-    if (str.length == 2){
-      str[1] = str[1].replace(/&lt;/g,"<");
-      str[1] = str[1].replace(/&gt;/g,">");
-      str[1] = str[1].replace(/&#34;/g,'"');
-      $("#extracontent${id}").html(str[1]);
-    }
+  str = "${description}";
+  str = str.split("...");
+  $("#desc${id}").html(str[0]);
+  if (str.length == 2) {
+    str[1] = str[1].replace(/&lt;/g, "<");
+    str[1] = str[1].replace(/&gt;/g, ">");
+    str[1] = str[1].replace(/&#34;/g, '"');
+    $("#extracontent${id}").html(str[1]);
+  }
+
+  $("#download${id}").on("click", function () {
+    $.ajax({
+      url: './${id}/modify/',
+      dataType: "json",
+      type: "GET",
+      crossDomain: true,
+      success: function (result) {
+        console.log("updated");
+      },
+      error: function (resp, ajaxoption, thrownerror) {
+        console.log("error");
+      }
+    });
+
+  });
+
+
 </script>
