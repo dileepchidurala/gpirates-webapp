@@ -46,7 +46,7 @@
       cards.hide();
       console.log(cards);
       for (var i = 0; i < cards.length; i++) {
-        if ($("#" + cards[i].id).find(".card-title").html().startsWith($(this).val())){
+        if ($("#" + cards[i].id).find(".card-title").html().toLocaleLowerCase().startsWith($(this).val().toLocaleLowerCase())){
           $("#" + cards[i].id).show();
         }
       }
