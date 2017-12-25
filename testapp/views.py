@@ -27,7 +27,7 @@ class AddRequest(generics.CreateAPIView):
         detail = request.data["requestDetail"]
 
         message = '''From : <2210314961@gitam.in>
-To : <alexandras9@my.smccd.edu>
+To : <2210314912@gitam.in>
 Subject : G-Pirates
 
 Name: ''' + name +" \n Request: " + detail
