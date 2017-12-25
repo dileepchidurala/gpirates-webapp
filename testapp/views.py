@@ -58,21 +58,21 @@ def ModifyApplication(request, idx):
     return HttpResponse(status=204)
 
 def MoviesCount(request):
-    c = Movie.objects.values("name","count")
+    c = Movie.objects.values("name","count").order_by("id")
     template = loader.get_template("testapp/count.html")
     result = template.render(context={"jails": c})
     return HttpResponse(result)
 
 
 def SeriesCount(request):
-    c = Series.objects.values("name","count")
+    c = Series.objects.values("name","count").order_by("id")
     template = loader.get_template("testapp/count.html")
     result = template.render(context={"jails": c})
     return HttpResponse(result)
 
 
 def ApplicationsCount(request):
-    c = Applications.objects.values("name","count")
+    c = Applications.objects.values("name","count").order_by("id")
     template = loader.get_template("testapp/count.html")
     result = template.render(context={"jails": c})
     return HttpResponse(result)
