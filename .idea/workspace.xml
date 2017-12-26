@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d1a2a7d8-a2b8-477b-9b87-334fc5991bf4" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/testapp/static/testapp/templates/nav.html" afterPath="$PROJECT_DIR$/testapp/static/testapp/templates/nav.html" />
-    </list>
+    <list default="true" id="d1a2a7d8-a2b8-477b-9b87-334fc5991bf4" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
